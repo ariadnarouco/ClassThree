@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+
+
+
+	<script type="text/javascript">
+		var informe;
+
+		var sueldo = prompt("Ingrese el sueldo a calcular");
+		informe = "El sueldo base del empleado es: " + sueldo;
+
+
+		var categoria = determinarCategoria(sueldo);
+		informe= informe.concat("La categoria es " + categoria );
+
+		var sueldoNeto = sueldo * 0.9;
+		var aportes = sueldo * 0.1
+		informe=informe.concat("\nLos aportes fueron de " + aportes );
+
+
+
+		var hasExtraHours = confirm("El empleado hizo horas extras? ");
+
+		if(hasExtraHours){
+			var horasExtras = prompt("Cuantas horas extras hizo?");
+			sueldoNeto = calcularSueldoConHorasExtras(sueldoNeto, horasExtras);
+			informe=informe.concat("\nLas horas extras fueron : " + horasExtras );
+
+		}
+		alert( informe.concat("\n y el total es de " + sueldoNeto ));
+
+
+
+
+
+
+
+
+		function determinarCategoria(sueldo){
+			var categoria = sueldo/1000;
+			categoria = Math.floor(categoria);
+			if(categoria > 5){
+				categoria= 5;
+			}
+			return categoria;
+		}
+
+		function calcularSueldoConHorasExtras(sueldoNeto, horasExtras){
+			var valorHorasExtras = 1.5;
+			if(horasExtras === 4 || horasExtras ===5){
+				valorHorasExtras= 2;
+			}
+
+			return sueldoNeto + (horasExtras * valorHorasExtras)
+		}
+
+	</script>
+	</body>
+</html>
