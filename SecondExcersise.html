@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning functions</title>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			
+			alert(sumaTotalArguments(2,2,2,2,2));
+			alert(restaTotalArguments(2,2,2,2,2));
+			alert(multiplicacionTotalArguments(2,2,2,2,2));
+
+
+
+			function sumaTotalArguments(){
+				var sumaTotal = 0;
+
+				for(numero in arguments){
+					sumaTotal = sumaTotal + arguments[numero];
+					console.log(arguments[numero]);
+				}
+				return sumaTotal;
+			}
+
+			function restaTotalArguments(){
+				var restaTotal = 0;
+
+				for(numero in arguments){
+					restaTotal = restaTotal - arguments[numero];
+					console.log(arguments[numero]);
+				}
+				return restaTotal;
+			}
+
+			function multiplicacionTotalArguments(){
+				var multiTotal = 1;
+
+				for(numero in arguments){
+					multiTotal = multiTotal * arguments[numero];
+					console.log(arguments[numero]);
+				}
+				return multiTotal;
+			}
+
+
+
+		</script>
+	</body>
+</html>

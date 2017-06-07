@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning functions</title>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+
+			var precio = prompt("Ingrese el precio del producto");
+			
+			var hasDescuento = confirm("Tiene descuento este producto?");
+			alert("Precio con iva " + calculoValor(precio, hasDescuento) + "\nPrecio sin iva " + precio);
+			
+			function calculoValor(precio, hasDescuento){
+				var resultado= precio * 1.21;
+				if(hasDescuento){
+					resultado= resultado* 0.85
+				}
+				return resultado;
+			}
+		
+
+		</script>
+	</body>
+</html>
